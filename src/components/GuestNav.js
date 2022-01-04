@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Nav = (props) => {
+const GuestNav = (props) => {
     return <div>Nav</div>
 };
 
-export default Nav;
+export default GuestNav;

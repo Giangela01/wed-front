@@ -1,24 +1,53 @@
-import logo from './logo.svg';
+import Header from "./components/Header"
+import GuestNav from "./components/GuestNav"
+import Story from "./pages/Story"
+// import UserNav from "./pages/UserNav"
+import Home from "./pages/Home"
+import Announcements from "./pages/Announcements"
+import Rsvp from "./pages/Rsvp"
+import Location from "./pages/Location"
+import Gallery from "./components/Gallery"
+import Footer from "./components/Footer"
+import { Switch, Route } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <GuestNav />
+          <Home />
+          <Footer />
+        </Route>
+        <Route exact path="/our-story">
+          <GuestNav />
+          <Story />
+          <Footer />
+        </Route>
+        <Route exact path="/announcements">
+          <GuestNav />
+          <Announcements />
+          <Footer />
+        </Route>
+        <Route exact path="/gallery">
+          <GuestNav />
+          <Gallery />
+          <Footer />
+        </Route>
+        <Route exact path="/location">
+          <GuestNav />
+          <Location />
+          <Footer />
+        </Route>
+        <Route exact path="/RSVP">
+          <GuestNav />
+          <Rsvp />
+          <Footer />
+        </Route>
+      </Switch>
+      </>
   );
 }
 
