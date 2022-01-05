@@ -12,6 +12,7 @@ import Gallery from "./components/Gallery"
 import Footer from "./components/Footer"
 import { Switch, Route } from "react-router-dom";
 import './App.css';
+import './styles.scss';
 
 function App() {
   return (
