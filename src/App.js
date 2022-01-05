@@ -1,7 +1,9 @@
 import Header from "./components/Header"
 import GuestNav from "./components/GuestNav"
 import Story from "./pages/Story"
-// import UserNav from "./pages/UserNav"
+import UserNav from "./components/UserNav"
+import UserMain from "./components/UserMain"
+import UserEdit from "./components/UserEdit"
 import Home from "./pages/Home"
 import Announcements from "./pages/Announcements"
 import Rsvp from "./pages/Rsvp"
@@ -44,6 +46,16 @@ function App() {
         <Route exact path="/RSVP">
           <GuestNav />
           <Rsvp />
+          <Footer />
+        </Route>
+        <Route exact path="/user/home">
+          <UserNav />
+          <UserMain />
+          <Footer />
+        </Route>
+        <Route exact path="/user/edit">
+          <UserNav />
+          <UserEdit />
           <Footer />
         </Route>
       </Switch>

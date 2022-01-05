@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Edit = (props) => {
+const UserEdit = (props) => {
     return <div>Edit</div>
 };
 
-export default Edit;
+export default UserEdit;
