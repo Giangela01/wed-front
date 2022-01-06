@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react'
 const Footer = (props) => {
 
     //Thank you: https://www.digitalocean.com/community/tutorials/react-countdown-timer-react-hooks
-    
+
     const calculateTimeLeft = () => {
         let year = new Date().getFullYear();
-        const difference = +new Date(`${year}-10-1`) - +new Date();
+        const difference = +new Date(`${year}-02-14`) - +new Date();
         let timeLeft = {};
     
         if (difference > 0) {
@@ -35,13 +35,13 @@ const Footer = (props) => {
           return;
         }
     
-        timerComponents.push(
-          <span>
-            {timeLeft[interval]} {interval}{" "}
-          </span>
+        timerComponents.push(<>
+          <span className='footer-font'>
+            {timeLeft[interval]} {interval}{" "} till 
+          </span><span className='footer-ido'>"i do."</span></>
         );
       });
-    return <div>{timerComponents.length ? timerComponents : <span>Time's up!</span>}</div>
+    return <div className='footer-bg'>{timerComponents.length ? timerComponents : <span>Today is the Day!</span>}</div>
 };
 
 export default Footer;
