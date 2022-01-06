@@ -4,9 +4,8 @@
 
 
 .bg-header {
-  /* background: url("https://emmajayne-designs.co.uk/wp-content/uploads/2016/04/wedding-giftwrap8-emmajayne-designs.jpg") fixed center; */
   background-color: #A25576;
-  height: 160px;
+  height: 120px;
   font-family: 'Roboto Slab', serif;
   text-align: center;
   color: white;
@@ -15,4 +14,11 @@ h1{
  padding-top: 50px;
  font-weight: 400;
  font-size: 65px;
+}
+
+.justify-content-center {
+  background-color: #A25576;
+}
+.draw-border {
+  color: white;
 }
