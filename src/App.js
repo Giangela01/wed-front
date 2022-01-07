@@ -10,11 +10,21 @@ import Rsvp from "./pages/Rsvp"
 import Location from "./pages/Location"
 import Gallery from "./components/Gallery"
 import Footer from "./components/Footer"
+
+// import React, { useState, useEffect } from "react";
+
 import { Switch, Route } from "react-router-dom";
 import './App.css';
 import './styles.scss';
 
 function App() {
+  //API-KEY URL
+
+  // useEffect(() => {
+  //   getApi();
+  // }, []);
+
+
   return (
     <>
       <Header />
