@@ -27,7 +27,7 @@ a.nav-btn {
 }
 div.footer-bg {
   background-image: url('https://cdn11.bigcommerce.com/s-0d1a4/images/stencil/1280x1280/i/silk-wedding-bouquets-artificial-flowers-blush-pink-thebridesbouquet__20460.original.jpg');
-  height: 120px;
+  height: 150px;
   text-align: center;
 }
 span.footer-font {
@@ -44,4 +44,12 @@ h1.home-h1 {
   font-family: 'Roboto Slab', serif;
   color: black;
   text-align: center;
+}
+div.location-style {
+  text-align: center;
+  color: black;
+  font-family: 'Roboto Slab', serif;
+}
+h4 {
+  font-family: 'WindSong', cursive;
 }

@@ -1,17 +1,24 @@
 import React from 'react'
-import { useState, useEffect } from "react";
 
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '350px',
+  height: '350px',
+  margin: '50px auto 30px auto', 
+  border: 'solid 10px #E9A2A3'
 };
 
-const center = {
-  lat: 38.788370,
-  lng:  -77.272880
+const position = {
+  lat: 36.1549,
+  lng:  -115.1516
+};
+
+const center= {
+  lat: 36.154881,
+  lng:  -115.151627
 };
 
 function Location() {
@@ -52,10 +59,13 @@ function Location() {
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
+    <Marker
+      position={position}
+    />
       </GoogleMap>
-  ) : <></>
+
+  ) : <>
+  </>
 }
 
 export default React.memo(Location)

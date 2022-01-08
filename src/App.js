@@ -10,6 +10,7 @@ import Rsvp from "./pages/Rsvp"
 import Location from "./pages/Location"
 import Gallery from "./components/Gallery"
 import Footer from "./components/Footer"
+import LocationDetails from './components/LocationDetails'
 
 // import React, { useState, useEffect } from "react";
 
@@ -52,6 +53,7 @@ function App() {
         <Route exact path="/location">
           <GuestNav />
           <Location />
+          <LocationDetails />
           <Footer />
         </Route>
         <Route exact path="/RSVP">
