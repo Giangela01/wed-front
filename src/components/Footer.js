@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react'
 
-const Footer = (props) => {
+const Footer = () => {
 
     //Thank you: https://www.digitalocean.com/community/tutorials/react-countdown-timer-react-hooks
 

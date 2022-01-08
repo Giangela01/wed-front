@@ -44,6 +44,7 @@ h1.home-h1 {
   font-family: 'Roboto Slab', serif;
   color: black;
   text-align: center;
+  margin:auto;
 }
 div.location-style {
   text-align: center;
@@ -55,4 +56,44 @@ h4 {
 }
 p.font {
   font-family: 'Roboto Slab', serif;
+}
+h4.story-font {
+  font-size: 40px;
+  text-align: center;
+  margin: 10px auto auto auto;
+}
+div.story-graphs {
+  font-size: 20px;
+  border: solid 3px #A25576;
+  margin: 15px 50px;
+  padding: 15px;
+  color: black;
+  text-align: justify
+}
+h5.home-h5 {
+  font-family: 'Roboto Slab', serif;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+}
+button.btn-rsvp {
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  background-color: #A25576;
+  border: solid #A25576;
+  color: white;
+  margin-top: 40px;
+}
+div.home-center {
+  text-align: center;
+}
+p.home-p {
+  color: black;
+}
+div.img-size { 
+  text-align: center;  
+  padding: 15px;  
+  border: 3px solid #A25576;  
+  margin: 35px 55px;
 }
