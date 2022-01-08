@@ -1,6 +1,5 @@
 import React from 'react';
 import GuestAnnouncement from '../components/GuestAnnouncement';
-import GuestNav from '../components/GuestNav'
 
 const Announcements = (props) => {
     return (

@@ -97,3 +97,27 @@ div.img-size {
   border: 3px solid #A25576;  
   margin: 35px 55px;
 }
+ul.thumbs {
+  text-align: center;
+}
+h4.img-title {
+  text-align: center;
+  font-size: 45px;
+  color: black;
+  margin: 15px auto 0 auto;
+}
+form.edit-form {
+  border: solid #A25576;
+  margin: 20px 35px 35px ;
+  padding: 40px;
+}
+input[type='submit'] {
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  background-color: #A25576;
+  border: solid #A25576;
+  color: white;
+}
+input.textarea-size {
+  height: 160px;
+}
