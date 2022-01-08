@@ -12,66 +12,96 @@ import Gallery from "./components/Gallery"
 import Footer from "./components/Footer"
 import LocationDetails from './components/LocationDetails'
 
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Switch, Route } from "react-router-dom";
 import './App.css';
 import './styles.scss';
 
-function App() {
-  //API-KEY URL
+function App(props) {
+  //Updates URL
+  const urlUpdate = "https://wed-backend.herokuapp.com/updates/";
+  const [updates, setUpdates] = useState([]);
 
-  // useEffect(() => {
-  //   getApi();
-  // }, []);
+  const nullUpdate = {
+    subject: "",
+    details: "",
+  };
+  const [targetUpdate, setTargetUpdate] = useState(nullUpdate);
+  const getUpdate = async () => {
+    const responseUpdate = await fetch(urlUpdate);
+    const dataUpdate = await responseUpdate.json();
+    setUpdates(dataUpdate);
+  };
+  const addUpdate = async (newUpdate) => {
+    const response = await fetch(urlUpdate, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUpdate),
+    });
+  
+    // get updated list of todos
+    getUpdate();
+  };
+  const getTargetUpdate = (update) => {
+    setTargetUpdate(update);
+    props.history.push("/user/edit");
+  };
+  const updateUpdate = async (update) => {
+    const response = await fetch(urlUpdate + update.id + "/", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(update),
+    });
+  
+    // get updated list of todos
+    getUpdate();
+  };
 
+  useEffect(() => {
+    getUpdate();
+  }, []);
 
   return (
     <>
       <Header />
+      <GuestNav />
       <Switch>
         <Route exact path="/">
-          <GuestNav />
           <Home />
-          <Footer />
         </Route>
         <Route exact path="/our-story">
-          <GuestNav />
           <Story />
-          <Footer />
         </Route>
-        <Route exact path="/announcements">
-          <GuestNav />
-          <Announcements />
-          <Footer />
+        <Route 
+          path="/announcements"
+          render={(routerProps) => <Announcements {...routerProps} updates=
+          {updates}/>}>
         </Route>
         <Route exact path="/gallery">
-          <GuestNav />
           <Gallery />
-          <Footer />
         </Route>
         <Route exact path="/location">
-          <GuestNav />
           <Location />
           <LocationDetails />
-          <Footer />
         </Route>
         <Route exact path="/RSVP">
-          <GuestNav />
           <Rsvp />
-          <Footer />
-        </Route>
-        <Route exact path="/user/home">
-          <UserNav />
-          <UserMain />
-          <Footer />
-        </Route>
-        <Route exact path="/user/edit">
-          <UserNav />
-          <UserEdit />
-          <Footer />
         </Route>
       </Switch>
+      <Route exact path="/user/home">
+          <UserNav />
+          <UserMain />
+        </Route>
+        <Route exact path="/user/update">
+          <UserNav />
+          <UserEdit />
+        </Route>
+      <Footer />
       </>
   );
 }
