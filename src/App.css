@@ -56,6 +56,7 @@ h4 {
 }
 p.font {
   font-family: 'Roboto Slab', serif;
+  margin: auto;
 }
 h4.story-font {
   font-size: 40px;
@@ -120,4 +121,12 @@ input[type='submit'] {
 }
 input.textarea-size {
   height: 160px;
+}
+
+button.update-btn-rsvp {
+  font-family: 'Roboto Slab', serif;
+  font-size: 10px;
+  background-color: #A25576;
+  border: solid #A25576;
+  color: white;
 }

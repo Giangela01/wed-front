@@ -10,6 +10,8 @@ import Location from "./pages/Location"
 import Footer from "./components/Footer"
 import LocationDetails from './components/LocationDetails'
 import ImgGallery from './components/ImgGallery'
+import RsvpEdit from './components/RsvpEdit'
+import EditForm from './components/EditForm'
 
 import React, { useState, useEffect } from "react";
 
@@ -71,7 +73,7 @@ const addGuests = async (newGuest) => {
 };
 const getTargetGuest = (guest) => {
   setTargetGuest(guest);
-  props.history.push("/edit");
+  props.history.push("/guest/:id");
 };
 
 // Function to edit todo on form submission
@@ -83,8 +85,6 @@ const updateGuest = async (guest) => {
     },
     body: JSON.stringify(guest),
   });
-
-  // get updated list of todos
   getGuests();
 };
 
@@ -128,11 +128,28 @@ useEffect(() => {
           <Location />
           <LocationDetails />
         </Route>
+        <Route
+          path="/rsvp/:id"
+          render={(routerProps) => (
+            <RsvpEdit {...routerProps} guests={guests} edit={getTargetGuest}/>
+          )}
+        />
         <Route 
-          path="/RSVP"
+          path="/rsvp"
           render={(routerProps) => <Rsvp {...routerProps} guests=
           {guests}/>}>
-        </Route>
+          </Route>
+        <Route
+          path="/edit"
+          render={(routerProps) => (
+            <EditForm
+              {...routerProps}
+              initialTodo={targetGuest}
+              handleSubmit={updateGuest}
+              buttonLabel="Update Your Invite"
+            />
+          )}
+        />
       </Switch>
       <Route exact path="/user/home">
           <UserMain />
