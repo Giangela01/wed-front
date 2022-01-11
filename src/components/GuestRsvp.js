@@ -6,14 +6,14 @@ const GuestRsvp = ({guests}) => {
         display: "flex",
         border: "3px solid #E9A2A3",
         margin: "10px auto",
-        width: "50%",
+        width: "40%",
         padding: "10px",
         color: "black"
       };
     return (
     <div style={div}>
         <p className='font'><strong> Guest Name: {guests.firstName} {guests.lastName}</strong></p>        
-        <Link to={`/rsvp/${guests.id}`}><button className='btn  update-btn-rsvp' type="button">Update RSVP</button></Link>
+        <Link to={`/rsvp/${guests.id}`}><button className='btn  update-btn-rsvp' type="button">Confirm RSVP</button></Link>
       </div>
       );
 };

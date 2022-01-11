@@ -73,7 +73,7 @@ const addGuests = async (newGuest) => {
 };
 const getTargetGuest = (guest) => {
   setTargetGuest(guest);
-  props.history.push("/guest/:id");
+  props.history.push("/edit");
 };
 
 // Function to edit todo on form submission
@@ -144,9 +144,9 @@ useEffect(() => {
           render={(routerProps) => (
             <EditForm
               {...routerProps}
-              initialTodo={targetGuest}
+              initialGuest={targetGuest}
               handleSubmit={updateGuest}
-              buttonLabel="Update Your Invite"
+              buttonLabel="Update Invite"
             />
           )}
         />
