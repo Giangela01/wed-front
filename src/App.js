@@ -12,6 +12,7 @@ import LocationDetails from './components/LocationDetails'
 import ImgGallery from './components/ImgGallery'
 import RsvpEdit from './components/RsvpEdit'
 import EditForm from './components/EditForm'
+import UserNew from './components/UserNew'
 
 import React, { useState, useEffect } from "react";
 
@@ -151,23 +152,12 @@ useEffect(() => {
           )}
         />
       </Switch>
-
-      <Route path="/user"
-      render={(routerProps) =>(
-        <UserNew 
-        {...routerProps}
-        guests={guests}
-        initialUpdate={nullUpdate}
-        handleAdd={addGuests}
-        buttonLabel="Add Guest" />
-      )}>
-      </Route>
       <Route path="/user/view"
       render={(routerProps) =>(
         <UserMain 
         {...routerProps}
         guests={guests}
-        initialUpdate={nullUpdate}
+        initialUpdate={nullGuest}
         deleteGuest={deleteGuest}/>
       )}>
       </Route>
@@ -175,11 +165,21 @@ useEffect(() => {
         render={(routerProps) =>(
           <UserEdit 
           {...routerProps}
-          initialUpdate={nullUpdate}
+          initialUpdate={nullGuest}
           handleSubmit={addUpdate}
           buttonLabel="Announce" />
         )}>
         </Route>
+        <Route path="/user"
+      render={(routerProps) =>(
+        <UserNew 
+        {...routerProps}
+        guests={guests}
+        initialAdd={nullGuest}
+        handleAdd={addGuests}
+        buttonLabel="Add Guest" />
+      )}>
+      </Route>
       <Footer />
       </>
   );
