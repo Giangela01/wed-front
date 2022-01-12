@@ -97,7 +97,7 @@ const deleteGuest = async (guest) => {
 
   // get updated list of todos
   getGuests();
-  props.history.push("/user/home");
+  props.history.push("/user/view");
 };
 useEffect(() => {
   getUpdate();
@@ -160,6 +160,7 @@ useEffect(() => {
         initialUpdate={nullGuest}
         deleteGuest={deleteGuest}/>
       )}>
+
       </Route>
         <Route path="/user/update"
         render={(routerProps) =>(
@@ -170,7 +171,7 @@ useEffect(() => {
           buttonLabel="Announce" />
         )}>
         </Route>
-        <Route path="/user"
+        <Route exact path="/user"
       render={(routerProps) =>(
         <UserNew 
         {...routerProps}

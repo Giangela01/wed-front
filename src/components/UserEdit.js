@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import UserNav from './UserNav'
 
 const UserEdit = ({ initialUpdate, handleSubmit, buttonLabel, history }) => {
     const [formData, setFormData] = useState(initialUpdate);
@@ -11,6 +12,8 @@ const UserEdit = ({ initialUpdate, handleSubmit, buttonLabel, history }) => {
         history.push("/announcements");
       };
     return (
+      <>
+    <UserNav />
     <div>
        <h4 className='img-title'>Make an Announcement</h4>
        <form onSubmit={handleSubmisson} className='edit-form'>
@@ -35,6 +38,7 @@ const UserEdit = ({ initialUpdate, handleSubmit, buttonLabel, history }) => {
     <a href="/user/view" rel="noreferrer"><button className='btn  btn-rsvp' type="button">Go Back to Dashboard</button></a>
     </div>
     </div>
+    </>
     );
 };
 

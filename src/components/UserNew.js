@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserNav from "./UserNav";
 
 const UserNew = ({ initialAdd, handleAdd, buttonLabel, history }) => {
     const [formData, setFormData] = useState(initialAdd);
@@ -18,6 +19,7 @@ const UserNew = ({ initialAdd, handleAdd, buttonLabel, history }) => {
     };
     return (
         <>
+        <UserNav />
         <h1 className="home-h1">Add A Guest</h1>
         <form className='edit-form' onSubmit={handleSubmisson}>
         <label> First Name
@@ -64,6 +66,9 @@ const UserNew = ({ initialAdd, handleAdd, buttonLabel, history }) => {
         </label>
         <input type="submit" value={buttonLabel} />
         </form>
+        <div className='home-center'>
+        <a href="/user/view" rel="noreferrer"><button className='btn  btn-rsvp' type="button">Go Back to Dashboard</button></a>
+        </div>
         </>
     );
 };
