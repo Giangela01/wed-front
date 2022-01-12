@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 const Form = ({ initialGuest, handleSubmit, buttonLabel, history }) => {
     const [formData, setFormData] = useState(initialGuest);
-
-    // const toggleChecked = () => setFormData(formData.plusOne = true);
     
     const handleToggle = (event) => {
         setFormData(event.target.value = "true")

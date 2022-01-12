@@ -6,11 +6,8 @@ const UserEdit = ({ initialUpdate, handleSubmit, buttonLabel, history }) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
       };
       const handleSubmisson = (event) => {
-        //prevent form refresh
         event.preventDefault();
-        //pass formData to handleSubmit prop function
         handleSubmit(formData);
-        //push user back to main page
         history.push("/announcements");
       };
     return (
@@ -35,7 +32,7 @@ const UserEdit = ({ initialUpdate, handleSubmit, buttonLabel, history }) => {
       <input type="submit" value={buttonLabel} className='btn-rsvp' />
     </form>
     <div className='home-center'>
-    <a href="/user/home" rel="noreferrer"><button className='btn  btn-rsvp' type="button">Go Back to Dashboard</button></a>
+    <a href="/user/view" rel="noreferrer"><button className='btn  btn-rsvp' type="button">Go Back to Dashboard</button></a>
     </div>
     </div>
     );

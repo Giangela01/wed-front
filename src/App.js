@@ -96,7 +96,7 @@ const deleteGuest = async (guest) => {
 
   // get updated list of todos
   getGuests();
-  props.history.push("/");
+  props.history.push("/user/home");
 };
 useEffect(() => {
   getUpdate();
@@ -151,9 +151,26 @@ useEffect(() => {
           )}
         />
       </Switch>
-      <Route exact path="/user/home">
-          <UserMain />
-        </Route>
+
+      <Route path="/user"
+      render={(routerProps) =>(
+        <UserNew 
+        {...routerProps}
+        guests={guests}
+        initialUpdate={nullUpdate}
+        handleAdd={addGuests}
+        buttonLabel="Add Guest" />
+      )}>
+      </Route>
+      <Route path="/user/view"
+      render={(routerProps) =>(
+        <UserMain 
+        {...routerProps}
+        guests={guests}
+        initialUpdate={nullUpdate}
+        deleteGuest={deleteGuest}/>
+      )}>
+      </Route>
         <Route path="/user/update"
         render={(routerProps) =>(
           <UserEdit 

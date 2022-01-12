@@ -142,3 +142,10 @@ label {
   font-size: 15px;
   color: black;
 }
+
+table {
+  table-layout: fixed;
+  width: 50%;  
+  margin: 5px 20px;
+  
+}
