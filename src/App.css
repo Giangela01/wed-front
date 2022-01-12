@@ -109,7 +109,7 @@ h4.img-title {
 }
 form.edit-form {
   border: solid #A25576;
-  margin: 20px 35px 35px ;
+  margin: 20px 80px 45px;
   padding: 40px;
 }
 input[type='submit'] {
@@ -129,4 +129,16 @@ button.update-btn-rsvp {
   background-color: #A25576;
   border: solid #A25576;
   color: white;
+}
+p.update-rsvp {
+  font-size: 25px;
+  color: black;
+  margin: 25px 0;
+}
+
+label {
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  color: black;
 }

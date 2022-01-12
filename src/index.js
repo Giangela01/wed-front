@@ -5,7 +5,7 @@ import App from "./App";
 import "milligram";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import 'antd/dist/antd.css';
+
 
 ReactDOM.render(
   <Router>
